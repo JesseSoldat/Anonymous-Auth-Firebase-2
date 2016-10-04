@@ -12,12 +12,24 @@ var auth = firebase.auth();
 var btnLogin = document.getElementById('btnLogin');
 var btnLogout = document.getElementById('btnLogout');
 
+// btnLogin.style.color = 'red';
 
 btnLogin.addEventListener('click', e => {
 	auth.signInAnonymously();
 });
 
+btnLogout.addEventListener('click', e => {
+	auth.signOut();
+});
+
 auth.onAuthStateChanged(user => {
-	console.log(user);
+	// console.log(user);
+	if(user){
+		btnLogout.classList.remove('hide');
+		btnLogin.classList.add('hide')
+	} else {
+		btnLogin.classList.remove('hide');
+		btnLogout.classList.add('hide');
+	}
 });
 

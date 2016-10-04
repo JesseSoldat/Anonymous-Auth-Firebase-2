@@ -1,11 +1,6 @@
 li {
 	list-style: none;
 }
-
-#btnLogin {
-
-}
-
-#btnLogout {
+.hide {
 	display: none;
 }
